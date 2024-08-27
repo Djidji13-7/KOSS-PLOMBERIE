@@ -1,0 +1,992 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+BE+WAL:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --blanche: #fff;
+  --Noire: #222;
+  --rose: pink;
+  --primaire: #007bc4;
+  --gri: #888;
+}
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  font-size: 1.6rem;
+  color: var(--Noire);
+  background-color: var(--blanche);
+  min-height: 100vh;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.promo {
+  background-color: darkblue;
+  text-align: center;
+  color: var(--blanche);
+  padding: 0.5rem 0;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 120px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+.navigation {
+  height: 7rem;
+  justify-content: space-between;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.icon1 {
+  display: none;
+}
+
+.menu .top {
+  display: none;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 0rem 1.5rem;
+}
+
+.logo span {
+  font-size: 3rem;
+  color: var(--primaire);
+}
+
+.nav-item:not(:last-child) {
+  margin: 0.5rem;
+}
+
+.nav-item:first-child .nav-link {
+  color: var(--primaire);
+}
+
+.nav-link {
+  padding: 0 1rem;
+  transition: all 500ms ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--primaire);
+  transition: 0.1s;
+}
+
+.nav .icons div {
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+.nav .icons div:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.nav .icons div:hover {
+  color: var(--primaire);
+  transition: 0.1s;
+}
+
+.nav .icons div:last-child {
+  position: relative;
+}
+
+.nav .icons div span {
+  position: absolute;
+  top: -0.5rem;
+  right: -1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blanche);
+  background-color: var(--primaire);
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 50%;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 610px) {
+  .navigation {
+    padding: 1rem 0;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--blanche);
+    height: 100%;
+    width: 65%;
+    max-width: 45rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 500ms ease-in-out;
+    z-index: 100;
+  }
+  .icon1 {
+    display: block;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  .icons {
+    display: none;
+  }
+  .logo span {
+    color: var(--primaire);
+  }
+  .logo a {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  .menu .top {
+    display: block;
+    position: relative;
+    background-color: darkblue;
+    width: 100%;
+    height: 6rem;
+    color: var(--blanche);
+  }
+  .top span {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .top span i {
+    font-size: 3rem;
+  }
+  .nav_list {
+    flex-direction: column;
+    align-items: start;
+    padding: 2rem 0;
+  }
+  .nav-item {
+    margin: 0 0 2rem 0;
+  }
+  .nav-link {
+    padding: 0.7rem;
+  }
+  .menu.monter {
+    left: 0;
+  }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Conteneur principal */
+.banniere-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 20px;
+}
+
+/* Banniere */
+.banniere {
+  position: relative;
+  border: 3px solid darkblue;
+  box-shadow: 0px 0 20px 4px darkblue;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: carrousel 15s infinite;
+  box-sizing: border-box; /* Inclure les bordures dans la taille */
+}
+
+/* Contenu */
+.banniere-contenu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+/* Media Queries pour ajuster la hauteur sur les écrans plus grands */
+@media (min-width: 768px) {
+  .banniere {
+    height: 90vh; /* Réduire la hauteur sur tablettes */
+  }
+}
+
+@media (min-width: 1024px) {
+  .banniere {
+    height: 90vh; /* Réduire la hauteur sur des écrans de bureau */
+    margin: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banniere {
+    height: 80vh; /* Réduire encore la hauteur sur les très grands écrans */
+  }
+}
+
+.gauche {
+  text-align: left;
+  max-width: 600px;
+  color: white; /* Assurez-vous que le texte est bien visible */
+}
+
+.sous-titre,
+.titre,
+h5 {
+  color: inherit;
+}
+
+.banniere .gauche .sous-titre {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.banniere .gauche .titre {
+  font-weight: 600;
+  font-size: 4rem;
+  margin-top: 20px;
+  line-height: 1.2;
+}
+
+.banniere .gauche h5 {
+  font-weight: 1000;
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+/* Style du bouton */
+.acheter {
+  background-color: var(--primaire);
+  color: var(--blanche);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-size: 1.8rem;
+  animation: clignote 500ms infinite alternate;
+}
+
+.acheter:hover {
+  background-color: darkblue;
+}
+
+@keyframes clignote {
+  0% {
+    box-shadow: 0 0 40px var(--primaire);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 40px darkblue;
+    transform: scale(1.1);
+  }
+}
+
+/* Animation du carrousel */
+@keyframes carrousel {
+  0% {
+    background-image: url("images/5.jpg");
+  }
+  25% {
+    background-image: url("images/1.jpg");
+  }
+  50% {
+    background-image: url("images/2.jpg");
+  }
+  75% {
+    background-image: url("images/4.jpg");
+  }
+  100% {
+    background-image: url("images/3.jpg");
+  }
+}
+
+/*Crousol ////////////////////////////////////////////////////////////////////////////////////*/
+/* Styles spécifiques pour le carrousel Bootstrap */
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Section Produits*/
+.section {
+  padding: 10rem 0 0;
+  margin: 20px;
+}
+
+.service {
+  border: 1px solid #ccc;
+  padding: 1rem 1rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.service-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 5rem;
+}
+.service .icon {
+  background-color: var(--primaire);
+  height: 80px;
+  width: 80px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.service .icon i {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 50%;
+  color: var(--blanche);
+  transform: translate(-50%, -50%);
+}
+
+.service h4 {
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.service .text {
+  font-size: 1.5rem;
+  color: #777;
+  text-align: center;
+}
+
+.titre {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+
+.titre h1 {
+  font-weight: 400;
+}
+.titre span {
+  color: var(--primaire);
+}
+
+.centre-produit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.produit {
+  text-align: center;
+  padding-bottom: 1rem;
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+}
+
+.produit :hover {
+  box-shadow: 12px 15px 10px rgba(0, 0.2, 0, 0.1);
+}
+
+.produit img {
+  transition: all 500ms ease-in-out;
+}
+
+.produit :hover img {
+  transform: scale(1.2);
+}
+
+.produit .img-cover {
+  overflow: hidden;
+}
+
+.produit .rating {
+  color: var(--primaire);
+}
+
+.produit .rating i:last-child {
+  color: var(--Noire);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Style de voir détailles et cammander*/
+.voir-details {
+  background-color: var(--primaire);
+  color: var(--blanche);
+  border: none;
+  padding: 1px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block; /* Assure que le bouton est affiché en bloc */
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+.voir-details:hover {
+  background-color: darkblue;
+}
+.commander {
+  background-color: var(--primaire);
+  color: var(--blanche);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: block; /* Assure que le bouton est affiché en bloc */
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+.commander:hover {
+  background-color: darkblue;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Style pour la boîte modale */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Couleur de fond plus sombre */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px; /* Coins arrondis */
+  width: 80%; /* Réduire la largeur pour un look plus élégant */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+}
+
+.close {
+  color: #333;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-title {
+  font-size: 24px;
+  color: #333;
+}
+
+#modal-age {
+  font-size: 18px;
+  color: #666;
+}
+
+#modal-description {
+  font-size: 18px;
+  color: #666;
+}
+
+#modal-price {
+  font-size: 20px;
+  color: #e74c3c; /* Couleur rouge pour le prix */
+  font-weight: bold;
+}
+
+#modal-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacement entre les images */
+}
+
+#modal-images img {
+  width: 150px; /* Augmenter la taille des images */
+  height: auto;
+  border-radius: 5px; /* Coins arrondis pour les images */
+  transition: transform 0.2s; /* Animation de zoom */
+}
+
+#modal-images img:hover {
+  transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+.modal-content h2,
+.modal-content p {
+  margin: 10px 0;
+  font-family: "Arial", sans-serif; /* Police élégante */
+  color: #333; /* Couleur du texte */
+}
+
+.modal .commander {
+  display: block;
+  margin: 20px auto 0;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media only screen and (max-width: 567px) {
+  .service-center {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .service {
+    margin-bottom: 1rem;
+  }
+  .titre {
+    font-size: 2rem;
+  }
+  .centre-produit {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .produit {
+    margin-bottom: 1rem;
+  }
+  .img-cover img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.categorie {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 4vw);
+  gap: 2rem;
+}
+
+.categorie .article {
+  overflow: hidden;
+}
+
+.categorie img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: all 500ms ease-out;
+}
+
+.categorie .art1 img {
+  object-fit: fill;
+}
+
+.categorie img:hover {
+  transform: scale(1.2);
+}
+
+.art1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 9;
+}
+
+.art2 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 9;
+}
+
+.art3 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.art4 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Styles pour le formulaire */
+
+.section-form {
+  max-width: 700px;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px; /* Coins arrondis */
+  width: 88%; /* Réduire la largeur pour un look plus élégant */
+  box-shadow: 0 5px 15px darkblue;
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.section-form form {
+  display: grid;
+  grid-template-areas: "familyname familyname name name"
+    "Pname Pname Pname Pname" "message message message message"
+    "num num submit submit";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.section-form h1 {
+  color: blue;
+  padding-bottom: 1rem;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+
+.blink {
+  animation: blink-animation 2s steps(5, start) infinite;
+}
+
+/* Définir l'animation de clignotement */
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.section-form input,
+.section-form select,
+.section-form textarea {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  outline: none;
+}
+
+.section-form input[type="text"],
+.section-form select {
+  height: 40px;
+}
+
+.section-form textarea {
+  height: 55px;
+  resize: none;
+}
+
+#familyname {
+  grid-area: familyname;
+}
+
+#name {
+  grid-area: name;
+}
+
+#Pname {
+  grid-area: Pname;
+}
+
+#num {
+  grid-area: num;
+}
+
+#message {
+  grid-area: message;
+}
+
+input[type="submit"] {
+  background-color: darkblue;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  grid-area: submit;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+}
+
+.section-form a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: none;
+}
+
+.section-form a:hover {
+  text-decoration: underline;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Style pour la boîte CONTACTEZ NOUS */
+/* Style général pour la section de contact */
+.contact {
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  padding: 20px; /* Espacement intérieur */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  max-width: 400px; /* Largeur maximale */
+  margin: 20px auto; /* Centrage et marge */
+  margin-bottom: 150px;
+}
+
+/* Style pour le conteneur central */
+.contact-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style pour le titre */
+.contact h3 {
+  font-size: 20px; /* Taille du texte */
+  color: darkslategray; /* Couleur du texte */
+  margin-bottom: 20px; /* Espace en bas */
+  text-align: center; /* Centrage du texte */
+}
+
+/* Style pour les éléments de contact */
+.contact a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Suppression du soulignement */
+  color: #333; /* Couleur du texte */
+  margin-bottom: 10px; /* Espace entre les éléments */
+  padding: 10px;
+  border-radius: 4px; /* Coins arrondis */
+  transition: background-color 0.3s, color 0.3s; /* Transition douce */
+}
+
+/* Style pour les icônes */
+.contact a i {
+  margin-right: 10px; /* Espace entre l'icône et le texte */
+  font-size: 18px; /* Taille de l'icône */
+}
+
+/* Changement de couleur au survol */
+.contact a:hover {
+  background-color: #007bff; /* Couleur de fond au survol */
+  color: #fff; /* Couleur du texte au survol */
+}
+
+/* Style pour les textes des liens */
+.contact a span {
+  font-size: 16px; /* Taille du texte */
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Style A propos de nous*/
+
+/* Style de base pour masquer la section */
+/* Titre principal */
+.propos-nous h2 {
+  font-size: 1.8rem; /* Réduit légèrement la taille pour un meilleur look sur PC */
+  color: #2c3e50; /* Un bleu-gris pour un contraste amélioré */
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-weight: 700; /* Rend le titre un peu plus audacieux */
+}
+
+/* Sous-titres */
+.propos-nous h3 {
+  font-size: 1.4rem; /* Réduit légèrement pour un meilleur équilibre */
+  color: #34495e; /* Un ton plus foncé pour les sous-titres */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Georgia", serif;
+  font-weight: 600; /* Un peu moins audacieux que le h2 */
+  text-align: left; /* Alignement à gauche pour un style plus classique */
+}
+
+/* Paragraphe */
+.propos-nous p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Ajout d'un peu plus d'espace après chaque paragraphe */
+  font-family: "Arial", sans-serif;
+  text-align: justify;
+}
+
+/* Style de base pour la section "À propos de nous" */
+.propos-nous {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.propos-center {
+  background-color: #fff;
+  margin: 5% auto; /* Réduit la marge pour une meilleure utilisation de l'espace */
+  padding: 30px; /* Ajoute un peu plus de padding pour un confort visuel */
+  border-radius: 10px;
+  width: 80%; /* Ajuste la largeur pour les écrans de bureau */
+  max-width: 800px; /* Limite la largeur maximale pour les très grands écrans */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+}
+
+.close-propos {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: darkblue;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-propos:hover,
+.close-propos:focus {
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Footer */
+.footer {
+  background-color: #000; /* Couleur de fond noire */
+  padding: 2rem; /* Espacement interne */
+  color: #fff; /* Couleur du texte */
+  font-family: Arial, sans-serif; /* Police générique */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour le footer */
+  gap: 2rem; /* Espacement entre les colonnes */
+  margin-bottom: 2rem;
+}
+
+.footer-center {
+  text-align: center; /* Centrer le texte */
+}
+
+.footer-center h3 {
+  font-size: 1.8rem; /* Taille du texte des titres */
+  font-weight: bold; /* Texte en gras */
+  margin-bottom: 1rem; /* Espacement sous les titres */
+}
+
+.footer-center a {
+  display: block;
+  color: #ccc; /* Couleur des liens */
+  font-size: 1.2rem; /* Taille de police des liens */
+  text-decoration: none; /* Supprimer le soulignement des liens */
+  margin-bottom: 0.5rem; /* Espacement entre les liens */
+}
+
+.footer-center a:hover {
+  color: #f39c12; /* Couleur au survol */
+}
+
+.footer-center div {
+  font-size: 1.2rem; /* Taille de police des informations */
+  margin-bottom: 0.5rem; /* Espacement sous les informations */
+}
+
+.copyright {
+  text-align: center; /* Centrer le texte de copyright */
+  font-size: 1rem; /* Taille de police du texte de copyright */
+  color: #ccc; /* Couleur du texte de copyright */
+  padding-top: 1rem; /* Espacement au-dessus du copyright */
+}
+
+.copyright a {
+  color: #f39c12; /* Couleur des liens de copyright */
+  text-decoration: none; /* Supprimer le soulignement */
+}
+
+.copyright a:hover {
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Style pour les informations de formation */
+.formations p {
+  font-size: 1.2rem; /* Taille de la police */
+  color: #ccc; /* Couleur du texte */
+  margin: 0.5rem 0; /* Espacement entre les paragraphes */
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+  }
+}
+/* Style pour l'image du plombier */
+.plombier-background {
+  width: 100px;
+  height: 100px;
+  background-image: url("images/5.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 1rem auto; /* Centre horizontalement */
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////*/
