@@ -1,252 +1,108 @@
-const OpenNav = document.querySelector(".icon1");
-const FermerNav = document.querySelector(".fermer");
-const Menu = document.querySelector(".menu");
-
-const PositionMenu = Menu.getBoundingClientRect().left;
-
-OpenNav.addEventListener("click", () => {
-  if (PositionMenu < 0) {
-    Menu.classList.add("monter");
-  }
-});
-
-FermerNav.addEventListener("click", () => {
-  if (PositionMenu < 0) {
-    Menu.classList.remove("monter");
-  }
-});
-
-// // Fonction pour afficher les détails de l'image
-// function showDetails(title, age, description, price, images) {
-//   var modal = document.getElementById("myModal");
-//   var modalTitle = document.getElementById("modal-title");
-//   var modalAge = document.getElementById("modal-age");
-//   var modalDescription = document.getElementById("modal-description");
-//   var modalPrice = document.getElementById("modal-price");
-//   var modalImages = document.getElementById("modal-images");
-
-//   modalTitle.textContent = title;
-//   modalAge.textContent = age;
-//   modalDescription.textContent = description;
-//   modalPrice.textContent = price;
-
-//   // Effacer les images précédentes
-//   modalImages.innerHTML = "";
-
-//   // Ajouter les nouvelles images
-//   images.forEach(function(image) {
-//     var imgElement = document.createElement("img");
-//     imgElement.src = image;
-//     modalImages.appendChild(imgElement);
-//   });
-
-//   modal.style.display = "block";
-//   modal.classList.add("show"); // Ajouter une classe pour l'animation
-// }
-
-// // Fermer la boîte modale
-// var span = document.getElementsByClassName("close")[0];
-// span.onclick = function() {
-//   var modal = document.getElementById("myModal");
-//   modal.style.display = "none";
-//   modal.classList.remove("show"); // Retirer la classe après fermeture
-// };
-
-// // Fermer la boîte modale en cliquant en dehors
-// window.onclick = function(event) {
-//   var modal = document.getElementById("myModal");
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//     modal.classList.remove("show"); // Retirer la classe après fermeture
-//   }
-// };
-/////////////////////////////////////////////////////////////////////////////////////////////////
-// Fonction pour faire défiler vers la section du formulaire
-// function scrollToForm(event) {
-//   event.stopPropagation(); // Empêcher l'événement de clic du produit
-//   var modal = document.getElementById("myModal");
-//   modal.style.display = "none"; // Fermer la modale
-//   modal.classList.remove("show"); // Retirer la classe après fermeture
-
-//   document
-//     .getElementById("section-form")
-//     .scrollIntoView({ behavior: "smooth" });
-// }
-// /////////////////////////////////////////////////////////////////////////////////////////////////
-// Fonction pour faire défiler vers la section du produits
-
 document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionner le bouton par son ID
-  var acheterMaintenantBtn = document.getElementById("acheter-maintenant");
-
-  // Ajouter l'événement de clic
-  acheterMaintenantBtn.addEventListener("click", function(event) {
-    event.preventDefault(); // Empêcher le comportement par défaut du lien
-    event.stopPropagation(); // Empêcher l'événement de clic de se propager
-
-    // Défilement vers la section des produits
-    document
-      .getElementById("section-form")
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-// //Boutique///////////////////////////////////////////////////////////////////////
-// document.addEventListener("DOMContentLoaded", function() {
-//   // Sélectionner le lien "Boutique"
-//   const accueilLink = document.querySelector('.nav-link[href="#2"]');
-
-//   // Sélectionner le menu
-//   const menu = document.querySelector(".menu");
-
-//   // Ajouter l'événement de clic
-//   accueilLink.addEventListener("click", function(event) {
-//     event.preventDefault(); // Empêcher le comportement par défaut du lien
-//     event.stopPropagation(); // Empêcher l'événement de clic de se propager
-
-//     // Défilement vers la section "banniere"
-//     document
-//       .getElementById("section-produits")
-//       .scrollIntoView({ behavior: "smooth" });
-
-//     // Fermer le menu mobile si ouvert
-//     if (menu.classList.contains("monter")) {
-//       menu.classList.remove("monter");
-//     }
-//   });
-// });
-
-//Accueill///////////////////////////////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionner le lien "Accueil"
-  const accueilLink = document.querySelector('.nav-link[href="#1"]');
-
-  // Sélectionner le menu
+  const menuIcon = document.querySelector(".menu1");
   const menu = document.querySelector(".menu");
+  const closeIcon = document.querySelector(".fermer");
+  const promoCloseIcon = document.querySelector(".fermer1");
+  const promoBar = document.querySelector(".promo");
+  const nav = document.querySelector(".nav");
 
-  // Ajouter l'événement de clic
-  accueilLink.addEventListener("click", function(event) {
-    event.preventDefault(); // Empêcher le comportement par défaut du lien
-    event.stopPropagation(); // Empêcher l'événement de clic de se propager
+  // Open the menu
+  menuIcon.addEventListener("click", () => {
+    menu.classList.add("show"); // Ajoute la classe pour afficher le menu
+  });
 
-    // Défilement vers la section "banniere"
-    document.getElementById("banniere").scrollIntoView({ behavior: "smooth" });
+  // Close the menu
+  closeIcon.addEventListener("click", () => {
+    menu.classList.remove("show"); // Retire la classe pour cacher le menu
+  });
 
-    // Fermer le menu mobile si ouvert
-    if (menu.classList.contains("monter")) {
-      menu.classList.remove("monter");
+  // Close the promo bar
+  promoCloseIcon.addEventListener("click", () => {
+    promoBar.classList.add("hide"); // Ajoute la classe pour cacher la barre de promo
+  });
+  // Effet de redimensionnement de la barre de navigation lors du défilement
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      // Si le défilement est supérieur à 50px
+      nav.classList.add("shrink"); // Ajoute la classe pour réduire la barre
+    } else {
+      nav.classList.remove("shrink"); // Retire la classe si on revient en haut
     }
   });
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Contact///////////////////////////////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionner le lien "Contact
-  const accueilLink = document.querySelector('.nav-link[href="#4"]');
-
-  // Sélectionner le menu
-  const menu = document.querySelector(".menu");
-
-  // Ajouter l'événement de clic
-  accueilLink.addEventListener("click", function(event) {
-    event.preventDefault(); // Empêcher le comportement par défaut du lien
-    event.stopPropagation(); // Empêcher l'événement de clic de se propager
-
-    // Défilement vers la section "banniere"
-    document
-      .getElementById("section-contact")
-      .scrollIntoView({ behavior: "smooth" });
-
-    // Fermer le menu mobile si ouvert
-    if (menu.classList.contains("monter")) {
-      menu.classList.remove("monter");
-    }
-  });
-});
-
-//Apropos de nous /////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
-  // Sélectionner le lien "À propos de nous"
-  const proposLink = document.getElementById("openPropos");
-  // Sélectionner la modale "À propos de nous"
-  const proposModal = document.getElementById("proposModal");
-  // Sélectionner le bouton de fermeture de la modale
-  const closeModalBtn = document.querySelector(".close-propos");
-  // Sélectionner le menu
-  const menu = document.querySelector(".menu");
+  const items = document.querySelectorAll(".carousel-item");
+  let currentIndex = 0;
 
-  // Fonction pour afficher la modale
-  function openProposModal() {
-    // Fermer le menu mobile si ouvert
-    if (menu.classList.contains("monter")) {
-      menu.classList.remove("monter");
-    }
-    // Afficher la modale
-    proposModal.style.display = "block";
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      item.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+      item.style.display =
+        index === currentIndex ? "block" : "none"; /* Gère la visibilité */
+
+      // Gère l'affichage de la légende de chaque diapositive
+      const caption = item.querySelector(".carousel-caption");
+      if (caption) {
+        if (index === currentIndex) {
+          caption.classList.add("show"); // Afficher la légende de l'élément actif
+        } else {
+          caption.classList.remove("show"); // Cacher les autres légendes
+        }
+      }
+    });
   }
 
-  // Fonction pour fermer la modale
-  function closeProposModal() {
-    proposModal.style.display = "none";
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
   }
 
-  // Ouvrir la modale lors du clic sur le lien
-  proposLink.addEventListener("click", e => {
-    e.preventDefault(); // Empêche le comportement par défaut du lien
-    openProposModal();
-  });
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
+  }
 
-  // Fermer la modale lors du clic sur le bouton de fermeture
-  closeModalBtn.addEventListener("click", closeProposModal);
+  // Initialisation du carrousel
+  updateCarousel();
 
-  // Fermer la modale lors du clic en dehors du contenu
-  window.addEventListener("click", e => {
-    if (e.target === proposModal) {
-      closeProposModal();
-    }
-  });
+  // Défilement automatique toutes les 5 secondes
+  setInterval(nextSlide, 7000);
+
+  // Ajout des gestionnaires d'événements pour les boutons
+  document
+    .querySelector(".carousel-control-prev")
+    .addEventListener("click", prevSlide);
+  document
+    .querySelector(".carousel-control-next")
+    .addEventListener("click", nextSlide);
 });
 
-// //ContactEZ NOUS/////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Attendre que le document soit prêt
+function toggleCategories() {
+  const categories = document.querySelector(".mobile-categories");
+  categories.classList.toggle("active");
+}
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   // Sélectionne le lien "Contact" et la section "contact"
-//   const contactLink = document.querySelector('.nav-link[href="#5"]');
-//   const contactModal = document.querySelector(".contact");
-//   const menu = document.querySelector(".menu");
+//////////////////////////////////////////////////////////////////////
 
-//   // Ajouter un écouteur d'événement au lien "Contact"
-//   contactLink.addEventListener("click", e => {
-//     e.preventDefault(); // Empêche le comportement par défaut du lien
+// Fonction pour faire défiler vers la section du form
+document.addEventListener("DOMContentLoaded", function() {
+  // Sélectionner tous les boutons par leur classe
+  var voirPlusBtns = document.querySelectorAll(".voir-plus");
 
-//     // Fermer le menu mobile si ouvert
-//     if (menu.classList.contains("monter")) {
-//       menu.classList.remove("monter");
-//     }
+  // Ajouter l'événement de clic à chaque bouton
+  voirPlusBtns.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+      event.preventDefault(); // Empêcher le comportement par défaut du bouton
 
-//     contactModal.style.display = "block"; // Affiche la section contact
-//   });
-
-//   // Ajouter un écouteur d'événement pour fermer la modale quand on clique en dehors
-//   contactModal.addEventListener("click", e => {
-//     if (e.target === contactModal) {
-//       contactModal.style.display = "none"; // Masque la section contact
-//     }
-//   });
-
-//   // Sélectionner le bouton de fermeture
-//   const closeModalBtn = document.querySelector(".close-modal");
-
-//   // Ajouter un écouteur d'événement pour fermer la modale lorsqu'on clique sur le bouton de fermeture
-//   closeModalBtn.addEventListener("click", () => {
-//     contactModal.style.display = "none";
-//   });
-// });
-
-// document
-//   .getElementById("openContact")
-//   .addEventListener("click", function(event) {
-//     event.preventDefault(); // Empêche le comportement par défaut du lien
-//     document.querySelector(".contact").style.display = "block"; // Affiche la boîte modale
-//   });
-/////////////////////////////////////////////////////////////////////////////////////////////////
+      // Défilement vers la section du form
+      document
+        .getElementById("section-form")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  });
+});
