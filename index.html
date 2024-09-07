@@ -7,13 +7,23 @@
     <!--titre de la page -->
     <title>Kos's services</title>
     <!--connecter le html avec le fichier style -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <!--connecter le html avec le fichier font awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!--connecter le html avec le fichier boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--connecter le html avec le fichier google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
+
     <!--icone de l'onglet-->
     <link rel="icon" href="./images/1_1.ico" type="image/x-icon">
-
 
 </head>
 
@@ -22,324 +32,351 @@
 <!-- //////////////////////////////////////////////////////////////////////////////////////-->
 
 <body>
-    <!--barre de navigation (debut)-->
-    <div class="promo">
-        <span>Services Plomberies </span>
-    </div>
     <header class="header">
+        <!-- Top Promo Bar -->
+        <div class="promo">
+            <span>Services de Plomberie Pro</span>
+            <span>Disponible dans toute la région</span>
+            <span>Inspection gratuite avec chaque service</span>
+            <span>Appelez pour une consultation</span>
+            <span class="fermer1"><i class="bx bx-x"></i></span>
+        </div>
+
+        <!-- Main Navigation -->
+
         <nav class="nav container">
-            <div class="navigation d-flex">
-                <div class="icon1">
-                    <i class="bx bx-menu"></i>
+            <!-- Logo -->
+            <div class="logo">
+                <a><span class="logo1">Kos's</span><br>services</a>
+            </div>
+            <!-- Desktop Navigation -->
+            <ul class="nav_list desktop-nav">
+                <li>
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li><a href="boutique.html" class="nav-link" id="boutique-link">Boutique</a></li>
+                <li><a href="contact.html" class="nav-link">Contactez nous</a></li>
+                <li><a href="propos.html" class="nav-link">À propos  de nous</a></li>
+
+            </ul>
+
+            <!-- Hamburger Menu Icon (Visible on Mobile Only) -->
+            <div class="icon1 mobile-nav">
+                <a><span class="menu1"><i class="bx bx-menu">MENU</i></span>
+                    </a>
+            </div>
+
+            <!-- Fullscreen Menu (Hidden by default and only for mobile) -->
+            <div class="menu">
+                <div class="menu-top">
+                    <span class="fermer"><i class="bx bx-x"></i></span>
                 </div>
-                <div class="logo">
-                    <a href="#"><span>K</span>oss</a>
-                </div>
-                <div class="menu">
-                    <div class="top">
-                        <span class="fermer">Fermer<i class="bx bx-x"></i></span>
+                <div class="menu-content">
+                    <!-- Search Section -->
+                    <div class="recherche">
+                        <input type="text" placeholder="RECHERCHE DANS LE CATALOGUE" id="recherche" required>
+                        <i class="bx bx-search" id="search-icon"></i>
                     </div>
-                    <ul class="nav_list d-flex">
-                        <li class="nav-item">
-                            <a href="#1" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#2" class="nav-link">Boutique</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" id="openPropos">A propos de nous</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#4" class="nav-link"> Contact</a>
-                        </li>
-                    </ul>
+
+                    <!-- Menu and Categories Side by Side -->
+                    <div class="menu-categories">
+                        <!-- Menu Section -->
+                        <div class="menu-side">
+                            <h3>MENU</h3>
+                            <ul class="nav_list">
+                                <li>
+                                    <a href="index.html" class="nav-link">Accueil</a>
+                                </li>
+                                <li><a href="boutique.html" class="nav-link" id="boutique-link">Boutique</a></li>
+                                <li><a href="contact.html" class="nav-link">Contactez nous</a></li>
+                                <li><a href="propos.html" class="nav-link">À propos de nous</a></li>
+                            </ul>
+                        </div>
+                        <!-- Categories Section -->
+                    </div>
                 </div>
-                <div class="icons d-flex">
-                    <div><i class="bx bx-search"></i></div>
-                    <div><i class="bx bx-heart"></i></div>
-                </div>
+            </div>
+
+            <!-- Icons -->
+            <div class="icons d-flex">
+                <div><i class="bx bx-user"></i></div>
             </div>
         </nav>
-        <!-- //////////////////////////////////////////////////////////////////////////////////////-->
-        <div class="banniere-container">
-            <div class="banniere" id="banniere">
-                <div class="banniere-contenu d-flex container">
-                    <div class="gauche">
-                        <span class="sous-titre">PLOMBIER DE CONFIANCE</span>
-                        <h1 class="titre">
-                            <span class="coleur">Votre satisfaction</span> <br /> notre priorité
-                        </h1>
-                        <h5>Services de plomberie à prix justes</h5>
-                        <a href="#" class="btn acheter" id="acheter-maintenant">Réserver maintenant</a>
+    </header>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+    <section class="main-content" id="main-content">
+
+        <div id="simpleCarousel" class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="/images/1.jpg" alt="Produit 1">
+                    <div class="carousel-caption">
+                        <h3 class="fade-in">Réparation de Fuites</h3>
+                        <p class="fade-in">Nous localisons et réparons les fuites rapidement pour éviter les dommages.</p>
+                        <button class="voir-plus fade-in">Réserver maintenant</button>
                     </div>
                 </div>
-            </div>
-        </div>
-
-    </header>
-    <!-- //////////////////////////////////////////////////////////////////////////////////////-->
-
-    <section class="section services">
-        <div class="service-center container">
-            <div class="service">
-                <span class="icon"><div><i class='bx bx-walk'></i></div></span>
-                <h4>Intervention Rapide</h4>
-                <span class="text">Intervention en urgence sous 24h</span>
-            </div>
-            <div class="service">
-                <span class="icon"><div><i class='bx bx-check-circle'></i></div></span>
-                <h4>Garantie de Qualité</h4>
-                <span class="text">Travail garanti sur tous nos services</span>
-            </div>
-            <div class="service">
-                <span class="icon"><div><i class='bx bx-wallet'></i></div></span>
-                <h4>Devis Gratuit</h4>
-                <span class="text">Évaluation gratuite avant intervention</span>
-            </div>
-            <div class="service">
-                <span class="icon"><div><i class="bx bx-headphone"></i></div></span>
-                <h4>Support 24/7</h4>
-                <span class="text">Assistance client</span>
-            </div>
-        </div>
-    </section>
-    <!-- //////////////////////////////////////////////////////////////////////////////////////-->
-
-    <!--  <section class="section" id="section-produits">
-        <div class="titre">
-            <h1><span>Nouvelles </span> arrivages</h1>
-        </div>
-        <div class="centre-produit container">
-            <div class="produit" onclick="showDetails('Jupe lumineuse', 'Couleur: Rose', 'Âge: Nouveau', 'Prix: 4800 Da', ['./Messenger/1.jpeg', './Messenger/12.jpeg', './Messenger/13.jpeg'])">
-<div class="img-cover">
-    <img src="./Messenger/1.jpeg" alt="image">
-</div>
-<p>Jupe lumineuse</p>
-<div class="rating">
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-</div>
-<div class="prix">4800 Da</div>
-
-<button class="voir-details" onclick="openModal(event, 'Jupe lumineuse', 'Âge: Nouveau', 'Couleur: Rose', 'Prix: 4800 Da', ['./Messenger/1.jpeg', './Messenger/12.jpeg', './Messenger/13.jpeg'])">Voir Détails</button>
-<button class="commander" onclick="scrollToForm(event)">Commander</button>
-</div>
-<div class="produit" onclick="showDetails('Sacauche', 'Couleur: beige', 'Âge: Nouveau', 'Prix: 1800 Da', ['./Messenger/2.jpg', './Messenger/21.jpeg', './Messenger/22.jpeg'])">
-<div class="img-cover">
-    <img src="./Messenger/2.jpg" alt="image">
-</div>
-<p>Sacauche</p>
-<div class="rating">
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-</div>
-<div class="prix">1800 Da</div>
-<div class="button-container">
-    <button class="voir-details" onclick="openModal(event, 'Sacauche', 'Âge: Nouveau', 'Couleur: Rouge', 'Prix: 4800 Da', ['./Messenger/2.jpg', './Messenger/21.jpeg', './Messenger/23.jpeg'])">Voir Détails</button>
-<button class="commander" onclick="scrollToForm(event)">Commander</button>
-</div>
-</div>
-<div class="produit" onclick="showDetails('Jupe ', 'Couleur: Blanche', 'Âge: Nouveau', 'Prix: 2800 Da', ['./Messenger/3.jpg', './Messenger/31.jpg', './Messenger/32.jpg'])">
-<div class="img-cover">
-    <img src="./Messenger/3.jpg" alt="image">
-</div>
-<p>Jupe</p>
-<div class="rating">
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-</div>
-<div class="prix">2800 Da</div>
-<div class="button-container">
-    <button class="voir-details" onclick="openModal(event, 'Jupe ', 'Âge: Nouveau', 'Couleur: Blanche', 'Prix: 4800 Da', ['./Messenger/3.jpg', './Messenger/31.jpg', './Messenger/32.jpg'])">Voir Détails</button>
-<button class="commander" onclick="scrollToForm(event)">Commander</button>
-</div>
-</div>
-<div class="produit" onclick="showDetails('Sac', 'Couleur: beige', 'Âge: Nouveau', 'Prix: 3800 Da', ['./Messenger/4.jpg', './Messenger/41.jpg', './Messenger/42.jpg'])">
-<div class="img-cover">
-    <img src="./Messenger/4.jpg" alt="image">
-</div>
-<p>Sac</p>
-<div class="rating">
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-</div>
-<div class="prix">3800 Da</div>
-<div class="button-container">
-    <button class="voir-details" onclick="openModal(event, 'Sac', 'Âge: Nouveau', 'Couleur: beige', 'Prix: 3800 Da', ['./Messenger/4.jpg', './Messenger/41.jpg', './Messenger/42.jpg'])">Voir Détails</button>
-<button class="commander" onclick="scrollToForm(event)">Commander</button>
-<Commander</button>
-    </div>
-    </div>
-    <div class="produit" onclick="showDetails('Sacauche', 'Couleur: beige', 'Âge: Nouveau', 'Prix: 1800 Da', ['./Messenger/5.jpg', './Messenger/51.jpg', './Messenger/52.jpg'])">
-<div class="img-cover">
-    <img src="./Messenger/5.jpg" alt="image">
-</div>
-<p>Sacauche</p>
-<div class="rating">
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-</div>
-<div class="prix">1800 Da</div>
-<button class="voir-details" onclick="openModal(event, 'Jupe lumineuse', 'Âge: Nouveau', 'Couleur: Rouge', 'Prix: 4800 Da', ['./Messenger/5.jpg', './Messenger/51.jpg', './Messenger/52.jpg'])">Voir Détails</button>
-<button class="commander" onclick="scrollToForm(event)">Commander</button>
-</div>
-<div class="produit" onclick="showDetails('Pule', 'Couleur: Bleu', 'Âge: Nouveau', 'Prix: 3800 Da', ['./Messenger/6.jpg', './Messenger/61.jpg', './Messenger/62.jpg'])">
-<div class="img-cover">
-    <img src="./Messenger/6.jpg" alt="image">
-</div>
-<p>Pule</p>
-<div class="rating">
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-    <i class="bx bxs-star"></i>
-</div>
-<div class="prix">3800 Da</div>
-<button class="voir-details" onclick="openModal(event, 'Pule', 'Âge: Nouveau', 'Couleur: Rouge', 'Prix: 3800 Da', ['./Messenger/6.jpg', './Messenger/61.jpg', './Messenger/62.jpg'])">Voir Détails</button>
-<button class="commander" onclick="scrollToForm(event)">Commander</button>
-</div>
-</div>
-</div>
-
- Modal 
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="modal-title"></h2>
-        <p id="modal-age"></p>
-        <p id="modal-description"></p>
-        <p id="modal-price"></p>
-        <div id="modal-images"></div>
-        <button class="commander" onclick="scrollToForm(event)">Commander</button>
-</div>
-</div>
-</section>-->
-    <!-- //////////////////////////////////////////////////////////////////////////////////////-->
-
-
-    <!--<section class="section">
-    <div class="titre">
-        <h1><span>Produits par </span> Catégories</h1>
-    </div>
-    <div class="categorie container">
-        <div class="article art1">
-            <img src="./Messenger/1.jpeg" alt="">
-        </div>
-        <div class="article art2">
-            <img src="./Messenger/2.jpg" alt="">
-        </div>
-        <div class="article art3">
-            <img src="./Messenger/3.jpg" alt="">
-        </div>
-        <div class="article art4">
-            <img src="./Messenger/6.jpg" alt="">
-        </div>
-    </div>
-</section>-->
-    <!-- //////////////////////////////////////////////////////////////////////////////////////-->
-
-
-    <!-- Formulaire -->
-    <section class="section-form" id="section-form">
-        <div class="title">
-            <h1 class="blink">Commander maintenant!</h1>
-        </div>
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="3f8a4956-e914-430d-8050-de5e36eb903b">
-            <input type="text" name="familyname" placeholder="Nom" id="familyname" class="contact-inputs" required>
-            <input type="text" name="name" placeholder="Prénom" id="name" class="contact-inputs" required>
-
-            <select id="Pname" name="product" class="contact-inputs" required>
-            <option value="" disabled selected>Type de service</option>
-            <option value="Eeau">Eau</option>
-            <option value="Gas">Gaz</option>
-            <option value="Toillete">Toilette</option>
-            <option value="chauffage">Chauffage</option>
-        </select>
-
-            <input type="text" name="num" placeholder="Numéro de téléphone" id="num" class="contact-inputs" required>
-            <textarea name="message" placeholder="Adresse" id="message" required></textarea>
-
-            <input type="submit" value="Envoyer">
-        </form>
-    </section>
-
-
-    <!-- //////////////////////////////////////////////////////////////////////////////////////-->
-    <section class="contact" id="section-contact">
-        <div class="contact-center">
-
-            <h3>CONTACTEZ NOUS</h3>
-            <div>
-                <a href="https://www.facebook.com" target="_blank">
-                    <span><i class="fa-brands fa-facebook"></i> Facebook</span>
-                </a>
-            </div>
-            <div>
-                <div>
-                    <a href="tel:+0615858554">
-                        <span><i class="fa-solid fa-phone"></i> WhatsApp</span>
-                    </a>
+                <div class="carousel-item">
+                    <img src="/images/2.jpg" alt="Produit 2">
+                    <div class="carousel-caption">
+                        <h3 class="fade-in">Installation de Chauffe-eau</h3>
+                        <p class="fade-in">Installation et entretien de chauffe-eau pour assurer une eau chaude constante.</p>
+                        <button class="voir-plus fade-in">Réserver maintenant</button>
+                    </div>
                 </div>
-                <div>
-                    <a href="mailto:kalyseesshop@gmail.com">
-                        <span><i class="fa-solid fa-envelope"></i> Gmail</span>
-                    </a>
+                <div class="carousel-item">
+                    <img src="/images/3.jpg" alt="Produit 3">
+                    <div class="carousel-caption">
+                        <h3 class="fade-in">Débouchage de Canalisations</h3>
+                        <p class="fade-in">Service rapide pour déboucher vos éviers, toilettes et autres canalisations.</p>
+                        <button class="voir-plus fade-in">Réserver maintenant</button>
+                    </div>
                 </div>
-            </div>
-    </section>
-    <!--////////////////////////////////////////////////////////////////////////////////////////////-->
-    <!--Apropos de nous-->
-    <section class="propos-nous" id="proposModal" style="display: none;">
-<div class="propos-center">
-    <span class="close-propos">&times;</span>
-    <div>
-        <h2>À Propos de Nous</h2>
-        </br>
+                <div class="carousel-item">
+                    <img src="/images/4.jpg" alt="Produit 4">
+                    <div class="carousel-caption">
+                        <h3 class="fade-in">Rénovation de Salles de Bain</h3>
+                        <p class="fade-in">Nous transformons votre salle de bain avec des installations modernes et durables.</p>
+                        <button class="voir-plus fade-in">Réserver maintenant</button>
+                    </div>
+                </div>
 
-        <h3>Qui sommes-nous ?</h3>
-        <p>Nous sommes [Nom de l'entreprise], une entreprise spécialisée dans [activité principale]. Depuis notre création en
-            [année], notre mission est de [objectif principal], tout en promouvant des valeurs telles que [valeurs fondamentales].
-        </p>
-    </div>
-    <div>
-        <h3> Notre Histoire</h3>
-        <p>Fondée par [nom du/des fondateur(s)], notre aventure a commencé avec [racontez l'idée de départ]. Aujourd'hui, nous
-            sommes fiers d'être [décrivez votre situation actuelle].</p>
-    </div>
-    <div>
-        <h3> Nos Valeurs</h3>
-        <p>Innovation, qualité et [autres valeurs clés] sont au cœur de tout ce que nous faisons. Nous croyons que [expliquez
-            en quoi ces valeurs sont importantes pour vous et vos clients].</p>
-    </div>
-    <div>
-        <h3>Notre Équipe</h3>
-        <p> Nous sommes une équipe de [description brève de l'équipe]. Chaque jour, nous travaillons ensemble pour [décrivez
-            ce que vous faites].</p>
-    </div>
-    <div>
-        <h3>Rejoignez-nous</h3>
-        <p>Explorez nos [produits/services] ou contactez-nous pour en savoir plus. Nous serions ravis de vous compter parmi
-            nos clients fidèles.</p>
-    </div>
+                <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+<button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+</div>
 </div>
 </section>
+<hr class="separator-line">
+<!-- Section2///////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- Afficher les produits de shop -->
+<section class="produit-categories">
+    <div class="categories-description">
+        <h5>EXPERTISE CERTIFIÉE</h5>
+        <h2>Nos Services de Plomberie</h2>
+        <p>Découvrez la qualité et la fiabilité pour tous vos besoins en plomberie</p>
+    </div>
+    <div class="produits">
+        <div class="produit-item">
+            <div class="produit-img">
+                <img src="/images/5.jpg" alt="Jupe Fillete lumineuse">
+
+            </div>
+            <div class="produit-des">
+                <ul class="produit-list">
+                    <li><a href="#">Réparation de Fuites</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="produit-item">
+            <div class="produit-img">
+                <img src="/images/4.jpg" alt="Sacauche">
+            </div>
+            <div class="produit-des">
+                <ul class="produit-list">
+                    <li><a href="#">Installation de Chauffe-eau</a></li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="produit-item">
+            <div class="produit-img">
+                <img src="/images/2.jpg" alt="Sac">
+            </div>
+            <div class="produit-des">
+                <ul class="produit-list">
+                    <li><a href="#">Rénovation de Salles de Bain</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="produit-item">
+            <div class="produit-img">
+                <img src="/images/4.jpg" alt="Sacauche">
+            </div>
+            <div class="produit-des">
+                <ul class="produit-list">
+                    <li><a href="#">Débouchage de Canalisations</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal-produits">
+        <div><i class="bx bx-heart"></i></div>
+        <div><i class="bx bx-cart"></i></div>
+    </div>
+</section>
+
+<hr class="separator-line">
+<!-- Section3///////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- Afficher les produits de shop -->
+<!--<section class="produit-phare">
+    <div class="phare-description">
+
+        <h2>Produits Phare</h2>
+        <p>Trouvez la pièce parfaite qui reflète votre individualité et sublime chaque occasion !</p>
+    </div>
+    <div class="articles">
+        <div class="article-item">
+            <div class="article-img">
+                <img src="/images/5.jpg" alt="Jupe Fillete lumineuse">
+                <div class="modal-produits">
+                    <div><i class="bx bx-heart"></i></div>
+                    <div><i class="bx bx-cart"></i></div>
+                </div>
+            </div>
+            <div class="article-des">
+                <ul class="article-list">
+                    <li><a href="#">Jupe Fillete lumineuse</a></li>
+                    <li><a href="#">Jupes</a></li>
+                    <li>
+                        <p>
+                            <s>5800 da</s> 4800 da</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="article-item">
+            <div class="article-img">
+                <img src="/images/4.jpg" alt="Sacauche">
+                <div class="modal-produits">
+                    <div><i class="bx bx-heart"></i></div>
+                    <div><i class="bx bx-cart"></i></div>
+                </div>
+            </div>
+            <div class="article-des">
+                <ul class="article-list">
+                    <li><a href="#">Jupe </a></li>
+                    <li><a href="#">Jupes</a></li>
+                    <li>
+                        <p>
+                            <s>2800 da</s> 1800 da</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="article-item">
+            <div class="article-img">
+                <img src="/images/2.jpg" alt="Sac">
+                <div class="modal-produits">
+                    <div><i class="bx bx-heart"></i></div>
+                    <div><i class="bx bx-cart"></i></div>
+                </div>
+            </div>
+            <div class="article-des">
+                <ul class="article-list">
+                    <li><a href="#">Sac</a></li>
+                    <li><a href="#">Sacs</a></li>
+                    <li>
+                        <p>
+                            <s>3800 da</s> 2800 da</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="article-item">
+            <div class="article-img">
+                <img src="/images/4.jpg" alt="Sacauche">
+                <div class="modal-produits">
+                    <div><i class="bx bx-heart"></i></div>
+                    <div><i class="bx bx-cart"></i></div>
+                </div>
+            </div>
+            <div class="articlet-des">
+                <ul class="article-list">
+                    <li><a href="#">Sacauche</a></li>
+                    <li><a href="#">Sacauches</a></li>
+                    <li>
+                        <p>
+                            <s>2800 da</s> 1800 da</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>-->
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+<!-- Formulaire/////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- contenue de fomulaire -->
+<div class="form-container" id="section-form">
+    <section class="section-form" id="section-form">
+        <div class="title">
+            <h1 class="blink">Réserver maintenant!</h1>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" class="styled-form">
+            <input type="hidden" name="access_key" value="3f8a4956-e914-430d-8050-de5e36eb903b">
+            <input type="text" name="familyname" placeholder="Nom" id="familyname" required class="form-input">
+            <input type="text" name="name" placeholder="Prénom" id="name" required class="form-input">
+            <input type="text" name="num" placeholder="Numéro de téléphone" id="num" required class="form-input">
+            <select id="Pname" name="product" class="contact-inputs" required>
+            <option value="" disabled selected>Type de service</option>
+            <option value="Eeau">Réparation de Fuites</option>
+            <option value="Gas">Installation de Chauffe-eau</option>
+            <option value="Toillete">Débouchage de Canalisations</option>
+            <option value="chauffage">Rénovation de Salles de Bain</option>
+        </select>
+            <textarea name="adresse" placeholder="Adresse" id="adresse" required class="form-textarea"></textarea>
+            <textarea name="message" placeholder="Message" id="message" class="form-textarea"></textarea>
+            <input type="email" name="mail" placeholder="E-mail" id="mail" class="form-input">
+            <input type="submit" value="Envoyer" class="form-submit">
+        </form>
+    </section>
+</div>
+
+<hr class="separator-line">
+<!-- CONTACTS/////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<section class="contact">
+    <div class="contact-center">
+
+        <h3>CONTACTEZ NOUS</h3>
+        <div class="contact-item facebook">
+            <a href="https://www.facebook.com" target="_blank">
+                <span><i class="fa-brands fa-facebook"></i> Facebook</span>
+            </a>
+        </div>
+        <div class="contact-item instagram">
+            <a href="https://www.instagram.com" target="_blank">
+                <span><i class="fa-brands fa-instagram"></i> Instagram</span>
+            </a>
+        </div>
+        <div class="contact-item tiktok">
+            <a href="https://www.tiktok.com" target="_blank">
+                <span><i class="fa-brands fa-tiktok"></i> TikTok</span>
+            </a>
+        </div>
+        <div class="contact-item whatsapp">
+            <a href="tel:+0615858554">
+                <span><i class="fa-solid fa-phone"></i> WhatsApp</span>
+            </a>
+        </div>
+        <div class="contact-item gmail">
+            <a href="mailto:kalyseesshop@gmail.com">
+                <span><i class="fa-solid fa-envelope"></i> Gmail</span>
+            </a>
+        </div>
+    </div>
+</section>
+<hr class="separator-line">
+<!-- FOOTER/////////////////////////////////////////////////////////////////////////////////////////////////-->
 <!--///////////////////////////////////////////////////////////////////////////-->
 <footer id="footer" class="footer">
     <div class="container">
@@ -348,9 +385,7 @@
             <div class="footer-center">
                 <h3>INFORMATIONS</h3>
                 <!-- Ajout de l'image du plombier -->
-                <div class="plombier-background">
-                    <!-- Le contenu à l'intérieur peut être ici -->
-                </div>
+                <img src="./images/5.jpg" alt="Plombier">
 
                 <!-- Informations sur les formations -->
                 <div class="formations">
@@ -393,8 +428,9 @@
 
 
 
-<!-- //////////////////////////////////////////////////////////////////////////////////////-->
-<script type="text/javascript" src="./script.js"></script>
+
+<script type="text/javascript" src="/script.js"></script>
+
 
 </body>
 
