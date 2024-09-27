@@ -853,6 +853,8 @@ section.begin {
     margin:  0 auto; /* Espacement externe entre les sections */
     border-radius: 8px; /* Coins arrondis */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre pour donner du relief */
+   max-width: 1200px;
+    width: 88%;
 }
 
 /* Style pour la zone de localisation */
