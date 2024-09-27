@@ -863,7 +863,7 @@ section.begin {
 }
 @media (max-width:400px){
   .section.localisation{
-    max-width: 320px;
+    max-width: 360px;
   }
 }
 .localisation h2 {
@@ -900,7 +900,7 @@ section.begin {
 }
 @media (max-width:400px){
   .section.faq{
-    max-width: 320px;
+    max-width: 360px;
   }
 }
 .faq h2 {
@@ -1216,7 +1216,7 @@ section.begin {
 }
 @media (max-width:400px){
   .section-form{
-    max-width: 320px;
+    max-width: 360px;
   }
 }
 .section-form form {
